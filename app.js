@@ -7,8 +7,20 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var session = require('express-session');
+var mongoose = require('mongoose');
 
 var app = express();
+
+
+mongoose.connect('mongodb://heroku_app35041302:rcdi89kbq9etfi7ltvf9u0no4n@ds053448.mongolab.com:53448/heroku_app35041302', function(err, res) {
+  if(err) throw err;
+  console.log('Conectado con éxito a la BBDD');
+}); // connect to our database
+
+var Users = require('./sessions/models/users'); // modelo de datos
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
