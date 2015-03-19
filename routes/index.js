@@ -5,7 +5,19 @@ var User = require('../models/users');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  var sess = req.session;
+
+  if(!('counter' in sess)) {
+    sess.counter = 0;
+  }
+  sess.counter++;
+
+  console.log(req.session);
+
+  res.render('index', {
+    title: 'Express',
+    counter: sess.counter
+  });
 });
 
 

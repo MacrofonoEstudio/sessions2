@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var login = require('./routes/login');
 var session = require('express-session');
 var mongoose = require('mongoose');
 
@@ -28,9 +29,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+    session({
+        secret: 'ssshhhhh',
+        saveUninitialized: false,
+        resave: false
+    })
+);
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/login', login);
 
 
 /// catch 404 and forward to error handler
