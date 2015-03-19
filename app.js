@@ -18,8 +18,6 @@ mongoose.connect('mongodb://heroku_app35041302:rcdi89kbq9etfi7ltvf9u0no4n@ds0534
   console.log('Conectado con éxito a la BBDD');
 }); // connect to our database
 
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
