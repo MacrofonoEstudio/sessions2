@@ -34,6 +34,8 @@ router.post('/user', function(req, res) {
     }
   });
 
+  res.send("va be");
+
 });
 
 
