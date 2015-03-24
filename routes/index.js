@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
 
 /* Add user */
 router.post('/user', function(req, res) {
-
+  console.log('Hola, estoy en User');
   var object = req.body;
   var user = new User(object);
   user.save(function (err) {
