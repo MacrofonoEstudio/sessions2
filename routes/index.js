@@ -27,8 +27,11 @@ router.post('/user', function(req, res) {
   var object = req.body;
   var user = new User(object);
   user.save(function (err) {
-    if (err) // ...
-    console.log('yes" User added');
+    if (err) {
+      console.error("cant add user");
+    } else {
+      console.log('yes" User added');
+    }
   });
 
 });
