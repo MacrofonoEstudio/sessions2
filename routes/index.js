@@ -21,4 +21,18 @@ router.get('/', function(req, res) {
 });
 
 
+/* Add user */
+router.post('/user', function(req, res) {
+
+  var object = req.body;
+  var user = new User(object);
+  user.save(function (err) {
+    if (err) // ...
+    console.log('yes" User added');
+  });
+
+});
+
+
 module.exports = router;
+
