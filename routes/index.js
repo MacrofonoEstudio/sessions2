@@ -38,19 +38,19 @@ router.post('/user', function(req, res) {
 
 });
 
-app.get('/', function(req, res){
+router.get('/', function(req, res){
   res.send('BodApp');
 });
 
-app.get('/views/:name', routes.partials);
+router.get('/views/:name', routes.partials);
 
-app.get('/api/users', api.users);
-app.get('/api/users/:id', api.user);
-app.post('/api/users', api.createUser);
-app.put('/api/users/:id', api.updateUser);
-app.delete('/api/users/:id', api.destroyUser);
+router.get('/api/users', api.users);
+router.get('/api/users/:id', api.user);
+router.post('/api/users', api.createUser);
+router.put('/api/users/:id', api.updateUser);
+router.delete('/api/users/:id', api.destroyUser);
 
-app.get('*', function(req, res){
+router.get('*', function(req, res){
   res.send('BodApp');
 });
 
