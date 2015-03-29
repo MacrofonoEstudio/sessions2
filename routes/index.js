@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users');
-var routes = require('.');
+var partial = require('./partials');
 var api = require('./api');
 
 
@@ -44,7 +44,7 @@ router.get('/', function(req, res){
   res.send('BodApp');
 });
 
-router.get('/views/:name', routes.partials);
+router.get('/views/:name', partials);
 
 router.get('/api/users', api.users);
 router.get('/api/users/:id', api.user);
