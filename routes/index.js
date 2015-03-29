@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users');
+var routes = require('/routes');
+var api = require('/api');
 
 
 /* GET home page. */
