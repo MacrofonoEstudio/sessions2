@@ -6,10 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var login = require('./routes/login');
 var session = require('express-session');
-var mongoose = require('mongoose');
 
 var app = express();
 
@@ -32,7 +30,6 @@ app.use(
 );
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/login', login);
 
 

@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/users');
 var partials = require('./partials');
 var api = require('./api');
 
 
-/* GET home page. */
+/* GET home page. 
 router.get('/', function(req, res) {
   var sess = req.session;
 
@@ -21,9 +20,10 @@ router.get('/', function(req, res) {
     counter: sess.counter
   });
 });
+*/
 
 
-/* Add user */
+/* Add user 
 router.post('/user', function(req, res) {
   console.log('Hola, estoy en User');
   var object = req.body;
@@ -39,6 +39,8 @@ router.post('/user', function(req, res) {
   res.send("va be");
 
 });
+
+*/
 
 router.get('/', function(req, res){
   res.send('BodApp');
