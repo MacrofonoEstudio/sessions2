@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users');
-var partial = require('./partials');
+var partials = require('./partials');
 var api = require('./api');
 
 
