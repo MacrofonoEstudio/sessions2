@@ -44,7 +44,7 @@ router.get('/', function(req, res){
   res.send('BodApp');
 });
 
-router.get('/views/:name', partials);
+router.get('/views/:name', partials.partials);
 
 router.get('/api/users', api.users);
 router.get('/api/users/:id', api.user);
