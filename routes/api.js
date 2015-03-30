@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://heroku_app35041302:rcdi89kbq9etfi7ltvf9u0no4n@ds053448.mongolab.com:53448/heroku_app35041302', function(err, res) {
-  if(err) throw err;
+  if(err) console.log(err);
   console.log('Conectado con éxito a la BBDD');
 });
 
@@ -8,12 +8,14 @@ var User = require('../models/users');
 
 exports.users = function(req, res) {
   User.find({}, function(err, obj) {
+  	if(err) console.log(err);
     res.json(obj)
   });
 };
 
 exports.user = function(req, res) {
   User.findOne({ _id: req.params.id }, function(err, obj) {
+    if(err) console.log(err);
     res.json(obj);
   });
 };
