@@ -22,7 +22,7 @@ exports.user = function(req, res) {
 
 exports.createUser = function(req, res) {
   var user = new User(req.body);
-  user.save();
+  user.save({ fbId: req.fbId, name: req.body.name, email: req.body.email, token: req.body.token });
   res.json(req.body);
 };
 
