@@ -14,7 +14,7 @@ exports.users = function(req, res) {
 };
 
 exports.user = function(req, res) {
-  User.findOne({ _id: req.params.id }, function(err, obj) {
+  User.findOne({ fbId: req.params.fbId }, function(err, obj) {
     if(err) console.log(err);
     res.json(obj);
   });
