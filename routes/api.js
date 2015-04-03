@@ -27,7 +27,7 @@ exports.createUser = function(req, res) {
 };
 
 exports.updateUser = function(req, res) {
-  User.findByIdAndUpdate(req.params.id, {
+  User.findByIdAndUpdate(req.params.fbId, {
     $set: { firstname: req.body.firstname, lastname: req.body.lastname, age: req.body.age }
   }, { upsert: true },
   function(err, obj) {
@@ -36,7 +36,7 @@ exports.updateUser = function(req, res) {
 };
 
 exports.destroyUser = function(req, res) {
-  User.remove({ _id: req.params.id }, function(err) {
+  User.remove({ fbId: req.params.fbId }, function(err) {
     res.json(true);
   });
 };
