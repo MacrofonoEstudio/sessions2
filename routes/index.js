@@ -49,10 +49,10 @@ router.get('/', function(req, res){
 router.get('/views/:name', partials.partials);
 
 router.get('/api/users', api.users);
-router.get('/api/users/:id', api.user);
+router.get('/api/users/:fbId', api.user);
 router.post('/api/users', api.createUser);
-router.put('/api/users/:id', api.updateUser);
-router.delete('/api/users/:id', api.destroyUser);
+router.put('/api/users/:fbId', api.updateUser);
+router.delete('/api/users/:fbId', api.destroyUser);
 
 router.get('*', function(req, res){
   res.send('BodApp');
