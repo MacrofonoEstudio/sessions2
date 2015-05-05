@@ -6,6 +6,7 @@ var userSchema   = new Schema({
 	name : String,
  	email: String,
  	token: String
+ 	// Añadir fotos
 });
 
 module.exports = mongoose.model('Users', userSchema);
